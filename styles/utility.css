@@ -1,0 +1,55 @@
+/*Classe utilitaria para os paddings do eixo y para o mobile*/
+.py-base {
+  padding-block: var(--py-base);
+}
+
+.py-lg {
+  padding-block: var(--py-lg);
+}
+
+.py-xl {
+  padding-block: var(--py-xl);
+}
+
+/*Classe utilitaria para os paddingsdo eixo x para o mobile*/
+.px-base {
+  padding-inline: var(--px-base);
+}
+
+/*Classe utiliria para os conteiners*/
+.conteiner {
+  --max-width: 375px;
+  max-width: var(--max-width);
+  width: calc(100% - var(--px-lg) * 2);
+  margin-inline: auto;
+}
+
+/*Classe utilitaria para esconder coisas do mobile*/
+.desktop-only {
+  display: none;
+}
+
+/*Classe utilitaria para deixar os elementos um abaixo do outro no mobile*/
+.even-collumns {
+  display: grid;
+  gap: 1rem;
+}
+
+/*Media de classes para o desktop*/
+@media (width >= 80rem) {
+  .conteiner {
+    /*subscrever a largura maxima para as telas grandes*/
+    --max-width: 80rem;
+  }
+
+  /*subscrever classe utilitaria para mostrar ocultas no mobile em telas grandes*/
+  .desktop-only {
+    display: initial;
+  }
+
+  /*subscrever classe utilitaria de um abaixo do outro no mobile para um lado do outro no desktop*/
+  .even-collumns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
