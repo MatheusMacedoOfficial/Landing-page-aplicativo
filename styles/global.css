@@ -1,0 +1,111 @@
+/*colocar o box-sizinh nos seletores universais*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*Reset paddin, margin and font styles*/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+
+  /*Torna a font mais suave*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+}
+
+/*Iniciar as variaveis do projeto */
+
+:root {
+  /*Variaveis de cor*/
+
+  --bg-color: #090909;
+  --surface-color: #18181b;
+  --stroke-color: #27272a;
+  --text-color-secondary: #a1a1aa;
+  --text-color-primary: #f4f4f5;
+  --brand-color-primary: #f7b773;
+  --brand-color-secondary: #fc4a1a;
+
+  /*variaveis de fontes*/
+  /*fontes*/
+  --ff-sans: "inter", system-ui, sans-serif;
+
+  /*font weight*/
+  --fw-base: 400;
+  --fw-md: 500;
+  --fw-bold: 800;
+
+  /*font-size*/
+  --fs-sm: 0, 875;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2.5rem;
+}
+
+/*configurar html*/
+html {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-base);
+  font-size: var(--fs-base);
+  line-height: 1.6rem;
+  color: var(--text-color-primary);
+}
+
+/*configurar body*/
+body {
+  background-color: var(--bg-color);
+}
+
+/*configurar h1,h2,h3*/
+h1,
+h2,
+h3 {
+  line-height: 1.2rem;
+  color: var(--text-color-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.04rem;
+}
+
+/*configurar h1 individualmente*/
+h1 {
+  font-size: var(--fs-2xl);
+}
+
+/*configurar h2 individualmente*/
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+/*Vamos resertar os links para que a não apareça o underline*/
+/*a outra propriedade vai servir para que o link herde as propriedades do elemento pai(HTML)*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Vamos resertar e remover as bolinhas da lista*/
+/*Quando removemos as bolinhas da lista, alguns navehadores não interpretam como lista*/
+/*Por isso é importante colocar no seletor o [role="list"] e o id na tag html*/
+ul [role="list"] {
+  list-style: none;
+}
+
+/*Vamos fazer a parte do desktop*/
+/*Vamos reescrever os valores das variaveis 
+diretamente no root para que ele mude quando as 
+condições do media forem atingidas*/
+
+@media (width >= 80rem) {
+  :root {
+    --fs-lg: 2rem;
+    --fs-xl: 3rem;
+    --fs-2xl: 4rem;
+  }
+}
