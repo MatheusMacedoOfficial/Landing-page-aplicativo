@@ -1,0 +1,48 @@
+/*Formatação dos icones com a classe utilitaria social*/
+a.social {
+  --bg-img: "";
+  background-image: var(--bg-img);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  /*renicialização do clip para que ele não bugue querendo cortar algo sem conteudo igual foi na parte de botoés*/
+  -webkit-background-clip: initial;
+  background-clip: initial;
+
+  /*formatação dos icones do tiktok*/
+  /*foi usado o "&" ao inves do seleto "a" porque estamos fazendo a formatação dentro de um seletor a*/
+  &[aria-label="tiktok"] {
+    --bg-img: url(../assets/icons/tiktok.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/tiktok-hover.svg);
+    }
+  }
+
+  /*formatação dos icones do instagram*/
+  &[aria-label="instagram"] {
+    --bg-img: url(../assets/icons/instagram.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/instagram-hover.svg);
+    }
+  }
+
+  /*formatação dos icones do twiter*/
+  &[aria-label="twitter"] {
+    --bg-img: url(../assets/icons/twitter.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/twitter-hover.svg);
+    }
+  }
+
+  /*formatação dos icones do discord*/
+  &[aria-label="discord"] {
+    --bg-img: url(../assets/icons/discord.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/discord-hover.svg);
+    }
+  }
+}
