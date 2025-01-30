@@ -19,7 +19,6 @@
 
 :root {
   /*Variaveis de cor*/
-
   --bg-color: #090909;
   --surface-color: #18181b;
   --stroke-color: #27272a;
@@ -38,9 +37,10 @@
   --fw-bold: 800;
 
   /*font-size*/
-  --fs-sm: 0, 875;
+  --fs-sm: 0.875rem;
   --fs-base: 1rem;
   --fs-lg: 1.25rem;
+  --fs-btn-lg: 1.125rem;
   --fs-xl: 1.5rem;
   --fs-2xl: 2.5rem;
 

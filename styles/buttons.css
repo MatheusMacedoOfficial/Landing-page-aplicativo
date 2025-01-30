@@ -1,0 +1,97 @@
+/*configurações primarias do botão que vai nas tags a e button*/
+.btn {
+  /*resert de bordas e definição do bg atraves da criação de uma nova variavel para o botão*/
+  --btn-bg-color: var(--text-color-primary);
+  --btn-color: var(--bg-color);
+  border: 0;
+
+  /*Definição do layout do botão*/
+  /*fit-content serve para o botão se adaptar ao tamanho do conteudo do botão*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
+  /*definição do arredondamento da borda*/
+  border-radius: 0.5rem;
+
+  /*formatação da fonte*/
+  font-weight: var(--fw-md);
+  font-size: var(--fs-base);
+  font-family: var(--ff-sans);
+  line-height: 1.5rem;
+
+  /*cursor com a mão*/
+  cursor: pointer;
+
+  /*cor do botão e fonte fo botãso*/
+  background: var(--btn-bg-color);
+  color: var(--btn-color);
+}
+
+/*configuração do hover*/
+.btn:hover {
+  --btn-bg-color: linear-gradient(
+    90deg,
+    var(--brand-color-secondary) 0%,
+    var(--brand-color-primary) 100%
+  );
+  --btn-color: var(--surface-color);
+}
+
+/*Estilização do botão pequeno*/
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--fs-sm);
+}
+
+/*Estilização do botão medio*/
+.btn-md {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fs-base);
+}
+
+/*Estilização do botão grande*/
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: var(--fs-btn-lg);
+}
+
+/*Criação dos botões secundarios, todos terão area-label*/
+/*com essa propriedade after, você informa que está criando um elemento dentro da classe*/
+.btn[aria-label] {
+  position: relative;
+  /*vamos fazer o botão com o conteudo transparent*/
+  /*Aqui, estamos estilizando apenas os botões que possuem um aria-label.
+  position: relative; permite que os pseudo-elementos ::before e ::after sejam posicionados relativamente ao botão.*/
+  /*content: ""; Cria um pseudo-elemento vazio.
+    border-radius: inherit; → Garante que o arredondamento das bordas do botão também se aplique ao ::before.
+    inset: 1.5px; → Define um espaçamento interno de 1.5px em todas as direções (top, right, bottom, left), criando um efeito de borda interna.
+    background-color: var(--bg-color); → Define a cor do fundo do ::before, que será sobreposto ao botão.*/
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: 1.5px;
+    background-color: var(--bg-color);
+  }
+
+  /*com essa propriedade after, você informa que está criando um elemento dentro da classe*/
+  /*content: attr(aria-label); → Insere o texto do atributo aria-label no botão.
+  background: var(--btn-bg-color); → Aplica a cor de fundo do botão ao texto.
+  -webkit-background-clip: text; e background-clip: text; → Faz com que o fundo seja aplicado apenas ao texto, criando um efeito de texto com gradiente (se o --btn-bg-color for um gradiente).
+  color: transparent; → Torna a cor do texto transparente, deixando apenas o fundo visível.*/
+  &::after {
+    content: attr(aria-label);
+    background: var(--btn-bg-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+  /* Resumo
+  O ::before cria um efeito de borda interna sutil.
+  O ::after exibe o conteúdo do aria-label, mas faz o texto parecer um gradiente/textura recortada.*/
+}

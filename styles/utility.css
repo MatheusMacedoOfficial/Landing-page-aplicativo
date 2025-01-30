@@ -35,6 +35,21 @@
   gap: 1rem;
 }
 
+/*Clase para transformar layout dos elementos em flex*/
+.flex {
+  display: flex;
+}
+
+/*classe para definir o gap*/
+.gap-1 {
+  gap: 1rem;
+}
+
+/*classe para transformar o display em grid*/
+.grid {
+  display: grid;
+}
+
 /*Media de classes para o desktop*/
 @media (width >= 80rem) {
   .conteiner {
