@@ -37,6 +37,11 @@
     var(--brand-color-primary) 100%
   );
   --btn-color: var(--surface-color);
+
+  /**/
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--btn-color);
 }
 
 /*Estilização do botão pequeno*/
@@ -94,4 +99,18 @@
   /* Resumo
   O ::before cria um efeito de borda interna sutil.
   O ::after exibe o conteúdo do aria-label, mas faz o texto parecer um gradiente/textura recortada.*/
+}
+
+@media (width >= 80rem) {
+  /*Troca do botão md para md renomeando a classe*/
+  .btn-sm {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-base);
+  }
+
+  /*Troca do botão lg para md renomeando a classe*/
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: var(--fs-btn-lg);
+  }
 }

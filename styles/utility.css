@@ -40,9 +40,19 @@
   display: flex;
 }
 
+/*Classe para alinha elementos no eixo y no centro*/
+.items-center {
+  align-items: center;
+}
+
 /*classe para definir o gap*/
 .gap-1 {
   gap: 1rem;
+}
+
+/*classe para definir o gap, não é possivel colocar ponto porque o css identifica que é um numer, por isso a barra, mas no html fica 1.5*/
+.gap-1\.5 {
+  gap: 1.5rem;
 }
 
 /*classe para transformar o display em grid*/
